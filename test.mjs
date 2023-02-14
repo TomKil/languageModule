@@ -5,7 +5,6 @@ import Dictionary from "../dictionary.mjs"
     testSupportingLanguageFiles();
 })();
 
-
 function testCreatingLanguageInterface(){
     const dictionary = new Dictionary();
     test(dictionary != undefined, "Creating instance of Language support module");
