@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>MM-207 Prosjekt: D&D 5e Character Sheet</title>
+    </head>
+
+<body>
+
+<select name="language" id="">
+
+</select>
+
+<div data-language-key="welcome">
+    placeholder text
+</div>
+<div data-language-key="noe">
+    placeholder text
+</div>
+
+<img src=".." alt="hmmmm" data-language-key="noe">
+
+
+<script type="module">
+    import {translate, setLang} from "./tools.mjs";
+
+    const imagesToTranslate = document.querySelector("img[data-language-key], [alt]")
+    translate(imagesToTranslate, "innerHTML");
+
+    const textElementsToTranslate = document.querySelector("*[data-language-key], ![alt]")
+    translate(textElementsToTranslate, "innerHTML");
+
+    document.getElementById("language").onselectionchange = (evt)=>{
+        setLang(evt.target.value);
+    }
+</script>
+
+</body>
+</html>
